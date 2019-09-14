@@ -1,11 +1,14 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { FirebaseContext } from "../Firebase";
 
 export default class HomePage extends Component {
-    render() {
-        return (
-            <div>
-                Hello
-            </div>
-        )
-    }
+  render() {
+    return (
+      <FirebaseContext.Consumer>
+        {firebase => {
+          return <div>i have access to firebase{console.log(firebase)}</div>;
+        }}
+      </FirebaseContext.Consumer>
+    );
+  }
 }
