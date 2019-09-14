@@ -6,7 +6,7 @@ export default class HomePage extends Component {
     return (
       <FirebaseContext.Consumer>
         {firebase => {
-          return <div>i have access to firebase{console.log(firebase)}</div>;
+          return <div>i have access to firebase</div>;
         }}
       </FirebaseContext.Consumer>
     );
