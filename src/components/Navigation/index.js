@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../../constants/routes";
+import SignOutButton from "../SignOut";
 
 export default class Navigation extends Component {
   render() {
@@ -21,6 +22,9 @@ export default class Navigation extends Component {
           </li>
           <li>
             <Link to={ROUTES.SIGN_IN}>Sign In</Link>
+          </li>
+          <li>
+            <SignOutButton />
           </li>
         </ul>
       </div>
