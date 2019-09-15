@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import PasswordChange from "../PasswordChange";
+import { AuthUserContext, withAuthorization } from "../Session";
 
-export default class Account extends Component {
+class Account extends Component {
   render() {
     return (
-      <div>
-        <h1>Account</h1>
-        <PasswordChange />
-      </div>
+      <AuthUserContext.Consumer>
+        {authUser => (
+          <div>
+            <h1>Account: {authUser.email}</h1>
+            <PasswordChange />
+          </div>
+        )}
+      </AuthUserContext.Consumer>
     );
   }
 }
+
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Account);

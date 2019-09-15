@@ -1,14 +1,11 @@
 import React, { Component } from "react";
-import { FirebaseContext } from "../Firebase";
-
-export default class HomePage extends Component {
+import { withAuthorization } from "../Session";
+class HomePage extends Component {
   render() {
-    return (
-      <FirebaseContext.Consumer>
-        {firebase => {
-          return <div>i have access to firebase</div>;
-        }}
-      </FirebaseContext.Consumer>
-    );
+    return <div>This page is seen by anyone that's logged in.</div>;
   }
 }
+
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(HomePage);
