@@ -6,6 +6,7 @@ import * as ROUTES from "../../constants/routes";
 import { withFirebase } from "../Firebase";
 
 import { SignUpLink } from "../SignUp";
+import { PasswordForgetLink } from "../PasswordForget";
 
 const INITIAL_STATE = {
   email: "",
@@ -18,6 +19,7 @@ const SignInPage = () => (
     <h1>Sign In</h1>
     <SignInForm />
     <SignUpLink />
+    <PasswordForgetLink />
   </div>
 );
 
